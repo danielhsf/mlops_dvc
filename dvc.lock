@@ -1,0 +1,17 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/main.py
+    deps:
+    - path: data
+      hash: md5
+      md5: 34fadbc761fc2c0053192823337716d1.dir
+      size: 19258794
+      nfiles: 70001
+    - path: src/main.py
+      hash: md5
+      md5: 055cf02a5c581d6753c248884700234e
+      size: 4906
+    params:
+      params.yaml:
+        ds_percentage: 20
