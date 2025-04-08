@@ -1,10 +1,17 @@
 # @Author: Daniel Fernandes
 # @Date:   2025-04-08 15:47:47
 # @Last Modified by:   Daniel Fernandes
-# @Last Modified time: 2025-04-08 15:49:48
+# @Last Modified time: 2025-04-08 16:12:03
 stages:
   train:
-    cmd python src.main.py
-  deps:
-   - data
-   - src/main.py
+    cmd: python src/main.py
+    deps:
+    - data
+    - src/main.py
+    params:
+    - params.yaml:
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step

@@ -2,7 +2,7 @@
 # @Author: Daniel Fernandes
 # @Date:   2025-04-08 15:19:09
 # @Last Modified by:   Daniel Fernandes
-# @Last Modified time: 2025-04-08 15:54:12
+# @Last Modified time: 2025-04-08 16:20:35
 """
 Title: Simple MNIST convnet
 Author: [fchollet](https://twitter.com/fchollet)
@@ -13,6 +13,7 @@ Accelerator: GPU
 """
 
 import os
+import dvc.api
 import numpy as np
 import cv2
 from keras import layers, Sequential, utils
@@ -108,7 +109,8 @@ def main():
 
     with Live() as live:
 
-        percentage = 10
+        params = dvc.api.params_show()
+        percentage = params['ds_percentage']
         # Load and preprocess data
         print('Loading', percentage ,'% of the training data...')
         x_train, y_train = load_data(TRAIN_FOLDER, percentage)
@@ -144,6 +146,8 @@ def main():
         score = model.evaluate(x_test, y_test, verbose=0)
         print("Test loss:", score[0])
         print("Test accuracy:", score[1])
+        live.log_metric(f"test_loss", score[0], plot=False)
+        live.log_metric(f"test_acc", score[1], plot=False)
 
         model.save("mnist.keras")
         live.log_artifact("mnist.keras",name="mnist.keras")
