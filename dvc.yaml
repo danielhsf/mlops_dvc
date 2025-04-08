@@ -1,0 +1,10 @@
+# @Author: Daniel Fernandes
+# @Date:   2025-04-08 15:47:47
+# @Last Modified by:   Daniel Fernandes
+# @Last Modified time: 2025-04-08 15:49:48
+stages:
+  train:
+    cmd python src.main.py
+  deps:
+   - data
+   - src/main.py

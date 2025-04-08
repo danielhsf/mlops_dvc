@@ -1,2 +1,6 @@
 dvc==3.42.0
-dvc-drive==3.0.1
+dvc-gdrive==3.0.1
+tensorflow[and-cuda]
+keras==2.13.1
+opencv-python==4.11.0.86
+dvclive==3.41.1
