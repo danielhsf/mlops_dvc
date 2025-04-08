@@ -2,7 +2,7 @@
 # @Author: Daniel Fernandes
 # @Date:   2025-04-08 15:19:09
 # @Last Modified by:   Daniel Fernandes
-# @Last Modified time: 2025-04-08 15:47:18
+# @Last Modified time: 2025-04-08 15:54:12
 """
 Title: Simple MNIST convnet
 Author: [fchollet](https://twitter.com/fchollet)
@@ -135,7 +135,7 @@ def main():
             epochs=EPOCHS,
             validation_split=0.3,
             verbose=1,
-            callbacks=[DVCLiveCallback(live,log_dir="dvclive")]
+            callbacks=[DVCLiveCallback(live)]
         )
         print('Training phase is done!')
 
