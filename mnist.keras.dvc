@@ -1,0 +1,5 @@
+outs:
+- md5: cda08ecc1a7fb2d640b7777d9374634f
+  size: 452281
+  hash: md5
+  path: mnist.keras
