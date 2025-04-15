@@ -40,5 +40,5 @@ Troque os campos YOUR_CLIENT_ID e CLIENT_SECRET pelas configurações da sua má
 
 Com as configurações definidas, faça o push pro repositorio dvc com o seguinte comando:
 ```
-dvc push
+(dvc_env) user@user$ dvc push
 ```
